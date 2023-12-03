@@ -61,7 +61,7 @@ class ButtonNavBar extends StatelessWidget {
                   height: 24.0,
                   width: 24.0,
                   allowDrawingOutsideViewBox: true,
-                  color: MenuState.short == selectedMenu
+                  color: MenuState.eksplore == selectedMenu
                       ? primaryColor
                       : inActiveIconColor,
                 ),

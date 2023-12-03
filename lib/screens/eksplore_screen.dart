@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projek_wisata/screens/short_screen.dart';
 import 'package:projek_wisata/widgets/button_nav_bar.dart';
 
 class EkspolerScreen extends StatelessWidget {
@@ -7,39 +8,72 @@ class EkspolerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: const ButtonNavBar(selectedMenu: MenuState.eksplore),
       body: new Container(
-        child: new Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-              ),
-              new Image.asset(
-                'images/splash_1.png',
-                fit: BoxFit.fill,
-                width: 100.0,
-                height: 100.0,
-              ),
-              new Image.asset(
-                'images/splash_2.png',
-                fit: BoxFit.fill,
-                width: 100.0,
-                height: 100.0,
-              ),
-              new Image.asset(
-                'images/splash_3.png',
-                fit: BoxFit.contain,
-                width: 100.0,
-                height: 100.0,
-              )
-            ]),
-        padding: const EdgeInsets.all(0.0),
-        alignment: Alignment.center,
+        child: new SingleChildScrollView(
+          child: new Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(height: 30),
+                Row(
+                  children: [
+                    const Text(
+                      "MAU CARI APA NIH?",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SearchBar(),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+                new Container(
+                  child: new GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShortsScreen())),
+                    child: Image.asset('images/splash_1.png'),
+                  ),
+                  alignment: Alignment.center,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+                new Container(
+                  child: new GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShortsScreen())),
+                    child: Image.asset('images/splash_2.png'),
+                  ),
+                  alignment: Alignment.center,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+                new Container(
+                  child: new GestureDetector(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShortsScreen())),
+                    child: Image.asset('images/splash_3.png'),
+                  ),
+                  alignment: Alignment.center,
+                  width: 200.0,
+                  height: 200.0,
+                ),
+              ]),
+        ),
       ),
     );
   }
