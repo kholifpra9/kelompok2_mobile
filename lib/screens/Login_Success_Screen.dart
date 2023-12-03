@@ -16,16 +16,24 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
       splash: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'images/logo.png',
-            width: 300,
-          ),
           const Text(
-            'Wisata App',
+            'Login Sukses',
             style: TextStyle(
               fontSize: 35,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Color(0xFFFAB43F),
+            ),
+          ),
+          Image.asset(
+            'images/success.gif',
+            width: 300,
+          ),
+          const Text(
+            'Hi Cianjur!',
+            style: TextStyle(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFFAB43F),
             ),
           ),
         ],
@@ -33,7 +41,7 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
       splashIconSize: 400,
       splashTransition: SplashTransition.fadeTransition,
       duration: 2000,
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       nextScreen: const DashboardScreen(),
     );
   }
