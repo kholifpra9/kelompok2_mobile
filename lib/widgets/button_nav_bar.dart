@@ -3,9 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projek_wisata/constants.dart';
 import 'package:projek_wisata/screens/Profile_Screen.dart';
 import 'package:projek_wisata/screens/dashboard_screen.dart';
+import 'package:projek_wisata/screens/eksplore_screen.dart';
 import 'package:projek_wisata/screens/short_screen.dart';
 
-enum MenuState { home, short, profile }
+enum MenuState { home, eksplore, short, profile }
 
 class ButtonNavBar extends StatelessWidget {
   const ButtonNavBar({
@@ -60,8 +61,14 @@ class ButtonNavBar extends StatelessWidget {
                   height: 24.0,
                   width: 24.0,
                   allowDrawingOutsideViewBox: true,
+                  color: MenuState.short == selectedMenu
+                      ? primaryColor
+                      : inActiveIconColor,
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EkspolerScreen())),
               ),
               IconButton(
                 icon: SvgPicture.asset(
