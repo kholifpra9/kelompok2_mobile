@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projek_wisata/screens/login_screen.dart';
 import 'package:projek_wisata/screens/splash_screen.dart';
 
 void main() {
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hi Cianjur',
+      title: 'Wisata App',
       theme: ThemeData(),
-      home: const SplashScreen(),
+      home: const LoginScreen(),
     );
   }
 }

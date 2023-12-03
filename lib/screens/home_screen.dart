@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projek_wisata/constants.dart';
+import 'package:projek_wisata/screens/login_screen.dart';
 import 'package:projek_wisata/size_config.dart';
-// import 'package:wisata_app/screens/login_screen.dart';
 import 'package:projek_wisata/widgets/default_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -100,14 +100,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Spacer(flex: 3),
                     DefaultButton(
                       text: "Continue",
-                      // press: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(builder: (context) {
-                      //       return const LoginScreen();
-                      //     }),
-                      //   );
-                      // },
+                      press: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const LoginScreen();
+                          }),
+                        );
+                      },
                     ),
                     const Spacer(),
                   ],

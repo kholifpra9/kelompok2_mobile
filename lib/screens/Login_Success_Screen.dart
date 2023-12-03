@@ -1,15 +1,15 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:projek_wisata/screens/home_screen.dart';
+import 'package:projek_wisata/screens/dashboard_screen.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class LoginSuccessScreen extends StatefulWidget {
+  const LoginSuccessScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<LoginSuccessScreen> createState() => _LoginSuccessScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _LoginSuccessScreenState extends State<LoginSuccessScreen> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       splashTransition: SplashTransition.fadeTransition,
       duration: 2000,
       backgroundColor: Colors.black,
-      nextScreen: const HomeScreen(),
+      nextScreen: const DashboardScreen(),
     );
   }
 }
