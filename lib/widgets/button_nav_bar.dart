@@ -23,6 +23,7 @@ class ButtonNavBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
         color: Colors.white,
+        border: Border.all(width: 1, color: Colors.black12),
         boxShadow: [
           BoxShadow(
             offset: const Offset(0, -15),

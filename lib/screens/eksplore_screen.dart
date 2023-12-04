@@ -76,13 +76,19 @@ class EkspolerScreen extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      child: Text(
-                        "TEMPAT WISATA",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      child: new GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShortsScreen())),
+                        child: Text(
+                          "TEMPAT WISATA",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     )
@@ -113,13 +119,19 @@ class EkspolerScreen extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      child: Text(
-                        "KULINER",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      child: new GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShortsScreen())),
+                        child: Text(
+                          "KULINER",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     )
@@ -150,13 +162,19 @@ class EkspolerScreen extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      child: Text(
-                        "SPOT HEALING",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      child: new GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShortsScreen())),
+                        child: Text(
+                          "SPOT HEALING",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     )

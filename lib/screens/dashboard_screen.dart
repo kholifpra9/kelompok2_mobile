@@ -13,86 +13,85 @@ class DashboardScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: const ButtonNavBar(selectedMenu: MenuState.home),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            height: size.height * .45,
-            decoration: const BoxDecoration(
-              color: bgLightColor,
-              image: DecorationImage(
-                alignment: Alignment.centerLeft,
-                image: AssetImage("assets/images/bg-dashboard.png"),
-              ),
-            ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 52,
-                      width: 52,
-                      decoration: const BoxDecoration(
-                        color: primaryColor,
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset("assets/icons/menu.svg"),
-                    ),
+      body: SingleChildScrollView(
+        child: new Column(
+          children: [
+            new Stack(
+              children: [
+                new Container(
+                  color: Colors.amber[600],
+                  width: 380,
+                  height: 300,
+                  child: Image.asset(
+                    'images/kotaCianjur.jpg',
+                    fit: BoxFit.cover,
                   ),
-                  const Text("Good Morning \nHappy People",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35,
-                        color: textLightColor,
-                      )),
-                  SizedBox(height: size.height * .03),
-                  const SearchBar(),
-                  SizedBox(height: size.height * .03),
-                  Expanded(
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      childAspectRatio: .85,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20,
-                      children: <Widget>[
-                        CategoryCard(
-                          title: "Vacation",
-                          imgSrc: "assets/icons/vacation.png",
-                          press: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return MainScreen();
-                            }));
-                          },
+                ),
+                SizedBox(height: 20),
+                new Container(
+                  margin: EdgeInsets.only(top: 30, left: 24),
+                  child: Text(
+                    'Hi! \nWargi Cianjur!',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      new Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Color(0xFFFAB43F),
                         ),
-                        CategoryCard(
-                          title: "News",
-                          imgSrc: "assets/icons/news.png",
-                          press: () {},
+                        child: Icon(Icons.book_rounded),
+                      ),
+                      Text('Ngaos'),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      new Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Color(0xFFFAB43F),
                         ),
-                        CategoryCard(
-                          title: "Ticket",
-                          imgSrc: "assets/icons/ticket.png",
-                          press: () {},
+                        child: Icon(Icons.audiotrack),
+                      ),
+                      Text('Mamaos'),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      new Container(
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Color(0xFFFAB43F),
                         ),
-                        CategoryCard(
-                          title: "Lodging",
-                          imgSrc: "assets/icons/lodging.png",
-                          press: () {},
-                        ),
-                      ],
-                    ),
+                        child: Icon(Icons.sports_martial_arts),
+                      ),
+                      Text('Maen po'),
+                    ],
                   ),
                 ],
               ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
