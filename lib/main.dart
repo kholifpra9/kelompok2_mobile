@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek_wisata/screens/login_screen.dart';
-import 'package:projek_wisata/screens/splash_screen.dart';
+// import 'package:projek_wisata/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

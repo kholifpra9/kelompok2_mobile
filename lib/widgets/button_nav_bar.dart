@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projek_wisata/constants.dart';
 import 'package:projek_wisata/screens/Profile_Screen.dart';
 import 'package:projek_wisata/screens/dashboard_screen.dart';
@@ -41,11 +41,9 @@ class ButtonNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/home.svg",
-                  height: 24.0,
-                  width: 24.0,
-                  allowDrawingOutsideViewBox: true,
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 32.0,
                   color: MenuState.home == selectedMenu
                       ? primaryColor
                       : inActiveIconColor,
@@ -56,11 +54,9 @@ class ButtonNavBar extends StatelessWidget {
                         builder: (context) => const DashboardScreen())),
               ),
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/mail.svg",
-                  height: 24.0,
-                  width: 24.0,
-                  allowDrawingOutsideViewBox: true,
+                icon: Icon(
+                  Icons.assistant_navigation,
+                  size: 32.0,
                   color: MenuState.eksplore == selectedMenu
                       ? primaryColor
                       : inActiveIconColor,
@@ -71,11 +67,9 @@ class ButtonNavBar extends StatelessWidget {
                         builder: (context) => const EkspolerScreen())),
               ),
               IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/message.svg",
-                  height: 24.0,
-                  width: 24.0,
-                  allowDrawingOutsideViewBox: true,
+                icon: Icon(
+                  Icons.video_collection,
+                  size: 32.0,
                   color: MenuState.short == selectedMenu
                       ? primaryColor
                       : inActiveIconColor,
@@ -86,11 +80,9 @@ class ButtonNavBar extends StatelessWidget {
                 },
               ),
               IconButton(
-                  icon: SvgPicture.asset(
-                    "assets/icons/account.svg",
-                    height: 24.0,
-                    width: 24.0,
-                    allowDrawingOutsideViewBox: true,
+                  icon: Icon(
+                    Icons.account_circle,
+                    size: 32.0,
                     color: MenuState.profile == selectedMenu
                         ? primaryColor
                         : inActiveIconColor,

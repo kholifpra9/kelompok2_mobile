@@ -30,7 +30,19 @@ class EkspolerScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SearchBar(),
+                SearchBar(
+                  constraints: const BoxConstraints(
+                    maxWidth: 500,
+                  ),
+                  leading: const Icon(
+                    Icons.search,
+                    color: Colors.black45,
+                  ),
+                  hintText: 'Cari apa di Cianjur?',
+                  hintStyle: MaterialStateProperty.all(
+                      const TextStyle(color: Colors.grey)),
+                  // other arguments
+                ),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
