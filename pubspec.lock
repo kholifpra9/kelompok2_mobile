@@ -280,6 +280,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
+  simple_fx:
+    dependency: "direct main"
+    description:
+      name: simple_fx
+      sha256: ad31a232775dc19da9027432f3c7f53906e111075dca41b952ad3791e30a5668
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
