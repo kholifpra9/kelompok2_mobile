@@ -3,15 +3,15 @@ import 'package:projek_wisata/models/tourism_place.dart';
 import 'package:projek_wisata/screens/detail_screen.dart';
 import 'package:projek_wisata/utils/contants.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class KulinerScreen extends StatelessWidget {
+  const KulinerScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Wisata Bandung'),
-        backgroundColor: primaryColor,
+        title: const Text('Kuliner Cianjur'),
+        backgroundColor: mainColor,
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {

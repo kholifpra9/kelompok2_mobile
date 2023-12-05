@@ -7,3 +7,5 @@ const bgLightColor = Color(0xFF0361F6);
 const textDarkColor = Color(0xFF222B45);
 const textLightColor = Color(0xFFF9F9F9);
 const shadowColor = Color(0xFFE6E6E6);
+
+const mainColor = Color(0xFFFAB43F);

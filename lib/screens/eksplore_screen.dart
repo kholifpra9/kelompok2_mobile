@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:projek_wisata/screens/short_screen.dart';
+import 'package:projek_wisata/screens/kuliner_screen.dart';
+import 'package:projek_wisata/screens/spot_screen.dart';
+import 'package:projek_wisata/screens/wisata_screen.dart';
 import 'package:projek_wisata/widgets/button_nav_bar.dart';
 import 'package:simple_fx/simple_fx.dart';
 
@@ -62,7 +64,7 @@ class EkspolerScreen extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ShortsScreen())),
+                                  builder: (context) => WisataScreen())),
                           child: SimpleFX(
                             imageSource: Image.asset(
                               'images/wisata1.jpg',
@@ -80,7 +82,7 @@ class EkspolerScreen extends StatelessWidget {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ShortsScreen())),
+                                builder: (context) => WisataScreen())),
                         child: Text(
                           "TEMPAT WISATA",
                           textAlign: TextAlign.center,
@@ -105,7 +107,7 @@ class EkspolerScreen extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ShortsScreen())),
+                                  builder: (context) => KulinerScreen())),
                           child: SimpleFX(
                             imageSource: Image.asset(
                               'images/wisata2.jpg',
@@ -123,7 +125,7 @@ class EkspolerScreen extends StatelessWidget {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ShortsScreen())),
+                                builder: (context) => KulinerScreen())),
                         child: Text(
                           "KULINER",
                           textAlign: TextAlign.center,
@@ -148,7 +150,7 @@ class EkspolerScreen extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ShortsScreen())),
+                                  builder: (context) => SpotScreen())),
                           child: SimpleFX(
                             imageSource: Image.asset(
                               'images/wisata3.jpg',
@@ -166,7 +168,7 @@ class EkspolerScreen extends StatelessWidget {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ShortsScreen())),
+                                builder: (context) => SpotScreen())),
                         child: Text(
                           "SPOT HEALING",
                           textAlign: TextAlign.center,

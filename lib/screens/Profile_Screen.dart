@@ -26,9 +26,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile"),
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
@@ -73,18 +70,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               press: () => {},
             ),
             ProfileMenu(
-              text: "Notifications",
-              icon: "assets/icons/bell.svg",
-              press: () {},
-            ),
-            ProfileMenu(
               text: "Settings",
               icon: "assets/icons/settings.svg",
-              press: () {},
-            ),
-            ProfileMenu(
-              text: "Help Center",
-              icon: "assets/icons/question.svg",
               press: () {},
             ),
             ProfileMenu(

@@ -32,91 +32,56 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        body: SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                  onPageChanged: (value) {
-                    setState(() {
-                      currentPage = value;
-                    });
-                  },
-                  itemCount: splashData.length,
-                  itemBuilder: (context, index) => Column(
-                        children: <Widget>[
-                          const Spacer(),
-                          const Text(
-                            "Wisata App",
-                            style: TextStyle(
-                              fontSize: 36,
-                              color: primaryColor,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            splashData[index]['text']!,
-                            textAlign: TextAlign.center,
-                          ),
-                          const Spacer(flex: 2),
-                          Image.asset(
-                            splashData[index]["image"]!,
-                            height: getProportionateScreenHeight(265),
-                            width: getProportionateScreenWidth(235),
-                          ),
-                        ],
-                      )),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(20)),
-                child: Column(
-                  children: <Widget>[
-                    const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        splashData.length,
-                        (index) => AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          margin: EdgeInsets.only(
-                              right: getProportionateScreenWidth(5)),
-                          height: getProportionateScreenHeight(6),
-                          width: currentPage == index ? 20 : 6,
-                          decoration: BoxDecoration(
-                            color: currentPage == index
-                                ? primaryColor
-                                : bgLightColor,
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Spacer(flex: 3),
-                    DefaultButton(
-                      text: "Continue",
-                      press: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return const LoginScreen();
-                          }),
-                        );
-                      },
-                    ),
-                    const Spacer(),
-                  ],
-                ),
-              ),
-            ),
-          ],
+        body: Stack(
+      children: [
+        new Container(
+          alignment: Alignment.center,
+          color: Colors.amber[600],
+          width: 380,
+          height: 800,
+          child: Image.asset(
+            'images/kotaCianjur.jpg',
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
+        SizedBox(height: 20),
+        new Container(
+          alignment: Alignment.center,
+          child: Text(
+            'SESUATU\nDI\nCIANJUR',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+        ),
+        new Container(
+          margin: EdgeInsets.only(top: 250),
+          alignment: Alignment.center,
+          child: Text(
+            'Cari apapun yang ingin\nanda kunjungi dan rasakan\n di Cianjur',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
+        ),
+        new Container(
+          margin: EdgeInsets.only(top: 560, left: 90),
+          width: 200.0,
+          child: DefaultButton(
+            text: "Continue",
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return const LoginScreen();
+                }),
+              );
+            },
+          ),
+        )
+      ],
     ));
   }
 }

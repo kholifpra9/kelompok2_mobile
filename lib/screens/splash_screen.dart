@@ -18,22 +18,14 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Image.asset(
             'images/logo.png',
-            width: 300,
-          ),
-          const Text(
-            'Wisata App',
-            style: TextStyle(
-              fontSize: 35,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+            width: 150,
           ),
         ],
       ),
       splashIconSize: 400,
       splashTransition: SplashTransition.fadeTransition,
       duration: 2000,
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       nextScreen: const HomeScreen(),
     );
   }
