@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projek_wisata/models/tourism_place.dart';
-import 'package:projek_wisata/screens/detail_screen.dart';
+import 'package:projek_wisata/models/data_wisata.dart';
+import 'package:projek_wisata/screens/kategoris_screens/detail_wisata_screen.dart';
 import 'package:projek_wisata/utils/contants.dart';
 
 class WisataScreen extends StatelessWidget {
@@ -15,11 +15,11 @@ class WisataScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          final TourismPlace place = tourismPlaceList[index];
+          final DataWisata place = DataWisataList[index];
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailScreen(place: place);
+                return DetailWisata(place: place);
               }));
             },
             child: Card(
@@ -54,7 +54,7 @@ class WisataScreen extends StatelessWidget {
             ),
           );
         },
-        itemCount: tourismPlaceList.length,
+        itemCount: DataWisataList.length,
       ),
     );
   }

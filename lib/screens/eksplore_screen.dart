@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:projek_wisata/screens/kuliner_screen.dart';
-import 'package:projek_wisata/screens/spot_screen.dart';
-import 'package:projek_wisata/screens/wisata_screen.dart';
+import 'package:projek_wisata/screens/kategoris_screens/kuliner_screen.dart';
+import 'package:projek_wisata/screens/kategoris_screens/spot_screen.dart';
+import 'package:projek_wisata/screens/kategoris_screens/wisata_screen.dart';
 import 'package:projek_wisata/widgets/button_nav_bar.dart';
 import 'package:simple_fx/simple_fx.dart';
 
