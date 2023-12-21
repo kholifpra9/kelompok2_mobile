@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projek_wisata/models/data_spot.dart';
 import 'package:projek_wisata/utils/contants.dart';
+import 'package:full_screen_image/full_screen_image.dart';
 
 var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
 
@@ -18,7 +19,16 @@ class DetailSpot extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Image.asset(place.imageAsset),
+                FullScreenWidget(
+                    child: Container(
+                      width: 380.0,
+                      height: 350.0,
+                      child: Image.network(
+                        place.imageAsset,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    disposeLevel: DisposeLevel.High),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -26,7 +36,7 @@ class DetailSpot extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
-                          backgroundColor: primaryColor,
+                          backgroundColor: Color(0xFFFAC13C),
                           child: IconButton(
                             icon: const Icon(
                               Icons.arrow_back,
@@ -45,63 +55,52 @@ class DetailSpot extends StatelessWidget {
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(top: 16.0),
+              color: mainColor,
+              width: 50.0,
+              margin: const EdgeInsets.only(top: 16.0, left: 20.0, right: 20.0),
               child: Text(
                 place.name,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 30.0,
+                  color: Colors.white,
                   fontFamily: 'Staatliches',
                 ),
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      const Icon(Icons.calendar_today),
-                      const SizedBox(height: 8.0),
+              // margin: const EdgeInsets.symmetric(vertical: 16.0),
+              margin: EdgeInsets.only(
+                  top: 30.0, left: 20.0, right: 20.0, bottom: 10.0),
+
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       Text(
-                        place.openDays,
-                        style: informationTextStyle,
+                        "Lokasi : ",
                       ),
+                      Text(place.location)
                     ],
                   ),
-                  Column(
-                    children: <Widget>[
-                      const Icon(Icons.access_time),
-                      const SizedBox(height: 8.0),
-                      Text(
-                        place.openTime,
-                        style: informationTextStyle,
-                      ),
-                    ],
+                  SizedBox(height: 15.0),
+                  FloatingActionButton.extended(
+                    label: Text(
+                      'Lihat di Maps',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: mainColor,
+                    icon: Icon(
+                      // <-- Icon
+                      Icons.map_outlined,
+                      size: 24.0,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
-                  Column(
-                    children: <Widget>[
-                      const Icon(Icons.monetization_on),
-                      const SizedBox(height: 8.0),
-                      Text(
-                        place.ticketPrice,
-                        style: informationTextStyle,
-                      ),
-                    ],
-                  ),
+                  SizedBox(height: 30.0)
                 ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                place.description,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 16.0,
-                  fontFamily: 'Oxygen',
-                ),
               ),
             ),
             SizedBox(
@@ -109,14 +108,32 @@ class DetailSpot extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: place.imageUrls.map((url) {
-                  return Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(url),
-                    ),
+                  return FullScreenWidget(
+                    child: Container(
+                        padding: EdgeInsets.all(6.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            url,
+                            fit: BoxFit.contain,
+                          ),
+                        )),
+                    disposeLevel: DisposeLevel.High,
                   );
                 }).toList(),
+              ),
+            ),
+            Container(
+              padding:
+                  const EdgeInsets.only(top: 16.0, left: 25.0, right: 25.0),
+              width: 100,
+              child: Text(
+                place.description,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontFamily: 'Oxygen',
+                ),
               ),
             ),
           ],

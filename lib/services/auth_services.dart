@@ -2,7 +2,7 @@ import 'package:projek_wisata/models/user.dart';
 
 class AuthService {
   final List<UserModel> _users = [
-    UserModel(email: 'user1@gmail.com', password: 'password'),
+    UserModel(email: 'modo@gmail.com', password: 'password'),
     UserModel(email: 'user2@gmail.com', password: 'password'),
   ];
   Future<UserModel> login(String email, String password) async {

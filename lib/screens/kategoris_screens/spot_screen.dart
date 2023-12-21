@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projek_wisata/models/tourism_place.dart';
-import 'package:projek_wisata/screens/detail_screen.dart';
+import 'package:projek_wisata/models/data_spot.dart';
+import 'package:projek_wisata/screens/kategoris_screens/detail_spot_screen.dart';
 import 'package:projek_wisata/utils/contants.dart';
 
 class SpotScreen extends StatelessWidget {
@@ -10,26 +10,26 @@ class SpotScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Spot healing Cianjur'),
+        title: const Text(
+          'Spot healing Cianjur',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: mainColor,
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          final TourismPlace place = tourismPlaceList[index];
+          final DataSpot place = DataSpotList[index];
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailScreen(place: place);
+                return DetailSpot(place: place);
               }));
             },
             child: Card(
+              margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Image.asset(place.imageAsset),
-                  ),
                   Expanded(
                     flex: 2,
                     child: Padding(
@@ -39,7 +39,8 @@ class SpotScreen extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             place.name,
-                            style: const TextStyle(fontSize: 16.0),
+                            style: const TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 10,
@@ -54,7 +55,7 @@ class SpotScreen extends StatelessWidget {
             ),
           );
         },
-        itemCount: tourismPlaceList.length,
+        itemCount: DataSpotList.length,
       ),
     );
   }

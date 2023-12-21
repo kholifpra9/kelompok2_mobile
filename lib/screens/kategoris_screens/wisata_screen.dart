@@ -10,7 +10,8 @@ class WisataScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Wisata Cianjur'),
+        title: const Text('Wisata Cianjur',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         backgroundColor: mainColor,
       ),
       body: ListView.builder(
@@ -23,12 +24,20 @@ class WisataScreen extends StatelessWidget {
               }));
             },
             child: Card(
+              margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
+                    child: Container(
+                      width: 120.0,
+                      height: 120.0,
+                      child: Image.network(
+                        place.imageAsset,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     flex: 1,
-                    child: Image.asset(place.imageAsset),
                   ),
                   Expanded(
                     flex: 2,
@@ -39,7 +48,8 @@ class WisataScreen extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             place.name,
-                            style: const TextStyle(fontSize: 16.0),
+                            style: const TextStyle(
+                                fontSize: 16.0, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 10,
