@@ -128,7 +128,7 @@ class DashboardScreen extends StatelessWidget {
                             children: <Widget>[
                               Expanded(
                                 flex: 1,
-                                child: Image.asset(place.imageAsset),
+                                child: Image.network(place.imageAsset),
                               ),
                               Expanded(
                                 flex: 2,

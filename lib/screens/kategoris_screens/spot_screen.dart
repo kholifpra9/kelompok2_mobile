@@ -31,6 +31,17 @@ class SpotScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Expanded(
+                    child: Container(
+                      width: 120.0,
+                      height: 120.0,
+                      child: Image.network(
+                        place.imageAsset,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    flex: 1,
+                  ),
+                  Expanded(
                     flex: 2,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
